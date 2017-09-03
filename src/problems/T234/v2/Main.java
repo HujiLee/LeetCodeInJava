@@ -11,6 +11,14 @@ public class Main {
             System.out.println(head);
             System.out.println(new Solution().isPalindrome(head));
         }
+        {
+            ListNode head = new ListNode(2);
+            head.next = new ListNode(3);
+            head.next.next = new ListNode(4);
+            head.next.next.next = new ListNode(5);
+            System.out.println(head);
+            System.out.println(new Solution().isPalindrome(head));
+        }
     }
 }
 
@@ -19,7 +27,7 @@ class Solution {
      * @param head 翻转前链表的头
      * @return 反转后链表的头
      */
-    public ListNode reverse(ListNode head) {
+    public ListNode reverseMyVersion(ListNode head) {
         if (head == null) {
             return head;
         }
@@ -49,6 +57,23 @@ class Solution {
             node.next = prev;
         }
 
+    }
+
+    /**
+     * https://discuss.leetcode.com/topic/33376/java-easy-to-understand
+     * 看起来更简短的reverse实现
+     * @param head
+     * @return
+     */
+    ListNode reverse(ListNode head){
+        ListNode prev = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
     }
     public boolean isPalindrome(ListNode head){
         if(head==null){
