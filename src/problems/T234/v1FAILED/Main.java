@@ -1,4 +1,4 @@
-package problems.T234;
+package problems.T234.v1FAILED;
 
 /**
  * Created by Administrator on 2017/9/3 0003.
@@ -151,11 +151,17 @@ class ListNode {
      */
     @Override
     public String toString() {
-        if (next == null) {
-            return "" + val;
-        } else {
-            return val + "->" + next.toString();
+        StringBuffer stringBuffer = new StringBuffer();
+        ListNode p = this;
+        while (true){
+            if(p.next==null){
+                stringBuffer.append(val);
+                break;
+            }else{
+                stringBuffer.append(val+"->");
+            }
         }
+        return stringBuffer.toString();
     }
 }
 /**
