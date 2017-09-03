@@ -7,6 +7,12 @@ public class Main {
     public static void main(String[] args) {
         {
             ListNode head = new ListNode(9);
+            head.setNext(8).setNext(9).setNext(9).setNext(1).setNext(9);
+            System.out.println(head);
+            System.out.println(new Solution().removeElements(head,9));
+        }
+        {
+            ListNode head = new ListNode(9);
             head.setNext(8).setNext(5).setNext(2).setNext(1).setNext(0);
             System.out.println(new Solution().removeElements(head,9));
         }
@@ -57,17 +63,17 @@ class ListNode {
 }
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-        if(head.val==val){
-            if(head.next!=null)return head.next;
-            else return null;
-        }
         ListNode p = head;
         while (p.next!=null){
             if(p.next.val==val){
                 p.next = p.next.next;
-                break;
+            }else{
+                p = p.next;
             }
-            p = p.next;
+        }
+        if(head.val==val){
+            if(head.next!=null)return head.next;
+            else return null;
         }
         return head;
     }
