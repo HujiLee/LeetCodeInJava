@@ -22,7 +22,6 @@ public class Main {
 }
 class Solution {
     /**
-     *
      * @param node 需要被删除的节点的引用;题目规定这个节点不是最末尾的节点
      */
     public void deleteNode(ListNode node) {
