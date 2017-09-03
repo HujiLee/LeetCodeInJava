@@ -3,6 +3,7 @@ package problems.T160;
 /**
  * Created by Administrator on 2017/9/3 0003.
  */
+//https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 public class Main {
     public static void main(String[] args) {
 
@@ -19,7 +20,7 @@ class ListNode {
     }
 }
 
-public class Solution {
+class Solution {
     int getLength(ListNode head){
         ListNode l = head;
         int count = 0;
