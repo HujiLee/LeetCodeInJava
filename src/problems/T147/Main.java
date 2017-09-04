@@ -12,6 +12,13 @@ public class Main {
     public static void main(String[] args) {
         {
             ListNode head = new ListNode(0);
+            head.setNext(0).setNext(0);
+            System.out.println(head);
+            head = new Solution().insertionSortList(head);
+            System.out.println(head);
+        }
+        {
+            ListNode head = new ListNode(0);
             head.setNext(8).setNext(-1).setNext(2).setNext(1).setNext(2).setNext(3).setNext(-2);
             System.out.println(head);
             head = new Solution().insertionSortList(head);
@@ -83,7 +90,7 @@ class Solution {
                 newlist.next = null;
             } else {
                 ListNode n = newlist;
-                if(n.val>temp.val){
+                if(n.val>=temp.val){
                     temp.next = n;
                     newlist = temp;
                 }else{
