@@ -51,6 +51,7 @@ class ListNode {
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
         if(head==null||head.next==null)return head;
+        if(k<1)return head;
         ListNode p = head;
         boolean kBigger = false;//k是否会超出链表的长度
         while (k>0){
