@@ -63,16 +63,19 @@ class Solution {
             count++;
         }
         k = k%count;
-        if(k<1)return head;
-        p.next = head;//保证成为一个环
-        p = head;
-        while (k>1){
-            p = p.next;
-            k--;
+        if(k==0){
+            return head;
         }
-        ListNode nhead = p.next;
-        p.next=null;
-        return nhead;
+        else{
+            p.next = head;//保证成为一个环
 
+            p = head;
+            for(int i = 1;i<=count-k-1;i++){
+                p = p.next;
+            }
+            ListNode nhead = p.next;
+            p.next = null;
+            return nhead;
+        }
     }
 }
