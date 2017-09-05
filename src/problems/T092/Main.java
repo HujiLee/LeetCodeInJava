@@ -77,6 +77,11 @@ class ListNode {
 }
 
 class Solution {
+    /**
+     *
+     * @param head
+     * @return 反转后的链表的{头,尾}
+     */
     public ListNode[] reverse(ListNode head) {
         ListNode prev = null;
         ListNode p = head;
