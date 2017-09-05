@@ -6,7 +6,11 @@ package problems;
 public class T061 {
     public static void main(String[] args) {
         {
-
+            ListNode head = new ListNode(1);
+            head.setNext(2);
+            System.out.println(head);
+            head = new Solution().rotateRight(head,3);
+            System.out.println(head);
         }
     }
 }
@@ -53,33 +57,22 @@ class Solution {
         if(head==null||head.next==null)return head;
         if(k<1)return head;
         ListNode p = head;
-        boolean kBigger = false;//k是否会超出链表的长度
-        while (k>0){
+        int count = 1;
+        while (p.next!=null){
             p = p.next;
-            if(p.next==null){
-                p.next=head;//成环
-                kBigger = true;
-            }
+            count++;
+        }
+        k = k%count;
+        if(k<1)return head;
+        p.next = head;//保证成为一个环
+        p = head;
+        while (k>1){
+            p = p.next;
             k--;
         }
-        if(kBigger){
-            ListNode newHead = p.next;
-            p.next = null;
-            return newHead;
-        }else{
-            ListNode newHead = p.next;
-            p.next=null;
-            p = newHead;
-            while (true){
-                if(p.next!=null){
-                    p = p.next;
-                }else {
-                    p.next = head;
-                    break;
-                }
-            }
-            return newHead;
-        }
+        ListNode nhead = p.next;
+        p.next=null;
+        return nhead;
 
     }
 }
