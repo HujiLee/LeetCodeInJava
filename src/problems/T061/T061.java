@@ -1,4 +1,4 @@
-package problems;
+package problems.T061;
 
 /**
  * Created by Administrator on 2017/9/5 0005.
