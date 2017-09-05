@@ -8,9 +8,31 @@ package problems.T189;
  * @anchor https://leetcode.com/problems/rotate-array/description/
  */
 public class Main {
+    static String ofArray(int[] nums){
+        StringBuffer buffer = new StringBuffer();
+        for(int i:nums){
+            buffer.append(i);
+        }
+        return buffer.toString();
+    }
     public static void main(String[] args) {
-        int[] ints = new int[]{-1};
-        new Solution().rotate(ints, 2);
+        {
+            int[] ints = new int[]{-1};
+            new Solution().rotate(ints, 2);
+        }
+        {
+            int[] ints = new int[]{1, 2, 3, 4, 5};
+            System.out.println(ofArray(ints));
+            new Solution().rotateBruteForce(ints, 3);
+            System.out.println(ofArray(ints));
+        }
+        {
+            int[] ints = new int[]{1,2,3};
+            System.out.println(ofArray(ints));
+            new Solution().rotateBruteForce(ints, 4);
+            System.out.println(ofArray(ints));
+        }
+
     }
 }
 
@@ -57,13 +79,35 @@ class Solution {
      * @param k
      */
     public void rotate(int[] nums, int k) {
-        if (k > nums.length) {
-
-        } else {
-            reverse(nums, 0, nums.length - k - 1);
-            reverse(nums, nums.length - k, nums.length - 1);
-        }
+        k = k % nums.length;
+        reverse(nums, 0, nums.length - k - 1);
+        reverse(nums, nums.length - k, nums.length - 1);
         reverse(nums, 0, nums.length - 1);
+    }
 
+    /**
+     * 用于理解什么叫做rorate
+     * @param nums
+     * @param k
+     */
+    public void rotateBruteForce(int[] nums, int k) {
+        int temp, previous;
+        for (int i = 0; i < k; i++) {
+            previous = nums[nums.length - 1];
+            for (int j = 0; j < nums.length; j++) {
+                temp = nums[j];
+                nums[j] = previous;
+                previous = temp;
+            }
+        }
     }
 }
+/*
+ Input:
+ [1,2,3]
+ 4
+ Output:
+ [3,2,1]
+ Expected:
+ [3,1,2]
+ */
