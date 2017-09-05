@@ -10,7 +10,7 @@ package problems.T189;
 public class Main {
     public static void main(String[] args) {
         int[] ints = new int[]{-1};
-        new Solution().rotate(ints,2);
+        new Solution().rotate(ints, 2);
     }
 }
 
@@ -28,21 +28,42 @@ public class Main {
  * Related problem: Reverse Words in a String II(可惜是Premium)
  */
 class Solution {
-    void swap(int[] nums,int ia,int ib){
-        nums[ia] = nums[ia]+nums[ib];
-        nums[ib] = nums[ia]-nums[ib];
-        nums[ia] = nums[ia]-nums[ib];
+    void swap(int[] nums, int ia, int ib) {
+        nums[ia] = nums[ia] + nums[ib];
+        nums[ib] = nums[ia] - nums[ib];
+        nums[ia] = nums[ia] - nums[ib];
     }
-    void reverse(int[] nums,int from,int to){
-        for(int i = from;i<from+to-i;i++){
-            swap(nums, i, from+to-i);
+
+    void reverse(int[] nums, int from, int to) {
+        for (int i = from; i < from + to - i; i++) {
+            swap(nums, i, from + to - i);
         }
     }
+
+    /**
+     * Custom Testcase
+     * Your input[-1,2]  3
+     * <p>
+     * Expected answer[2,-1]
+     * <p>
+     * Your input[-1,2]  2
+     * <p>
+     * Expected answer[-1,2]
+     * <p>
+     * Your input[-1,2] 1
+     * Expected answer[2,-1]
+     *
+     * @param nums
+     * @param k
+     */
     public void rotate(int[] nums, int k) {
-        if(k>=nums.length)return;
-        reverse(nums,0,nums.length-k-1);
-        reverse(nums,nums.length-k,nums.length-1);
-        reverse(nums,0,nums.length-1);
+        if (k > nums.length) {
+
+        } else {
+            reverse(nums, 0, nums.length - k - 1);
+            reverse(nums, nums.length - k, nums.length - 1);
+        }
+        reverse(nums, 0, nums.length - 1);
 
     }
 }
