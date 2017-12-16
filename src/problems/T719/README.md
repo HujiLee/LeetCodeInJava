@@ -17,3 +17,19 @@ Given an integer array, return the k-th smallest **distance** among all the pair
 * `2 <= len(nums) <= 10000.`
 * `0 <= nums[i] < 1000000.`
 * `1 <= k <= len(nums) * (len(nums) - 1) / 2.`
+
+***
+**一个例子:**
+
+输入:
+
+    [1,1,3,2,9]
+    7
+输出:
+
+    6
+理由:
+    
+ 所有的`distance`是[0,1,1,1,2,2,**6**,7,8,9]
+ 
+ 这里面7th小的是6
