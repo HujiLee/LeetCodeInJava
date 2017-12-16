@@ -66,15 +66,13 @@ class Solution {
                     int temp = graph[next][i] + path_shortest_length[next].dist;
                     if (temp < path_shortest_length[i].dist) {
                         path_shortest_length[i].dist = temp;
-                        /*
-                        强行重新保证最小dist的点仍然在root
-                        这回应该是Dijkstra算法了
+                        could_reach_set.add(path_shortest_length[i]);
+                        /**
+                         *  之前是重新建立了一个PriorityQueue,把could_reach_set里的元素一个个填进去,来达到重新排序的效果
+                         *  其实只需要could_reach_set.add(path_shortest_length[i]),就能保证,队列的第一个元素是最小元素
+                         *  这样可能造成最小元素在队列的后面重复出现,但不影响结果
+                         *  毕竟我们只需要队列的第一个元素是最小元素就行了
                          */
-                        PriorityQueue<IndexAndDist> s = new PriorityQueue<IndexAndDist>();
-                        for(IndexAndDist indexAndDist:could_reach_set){
-                            s.add(indexAndDist);
-                        }
-                        could_reach_set = s;
                     }
                 }
             }
@@ -123,53 +121,7 @@ public class Main {
                             new int[]{5, 2, 74},
                     }
                     , 5,
-                    3);
+                    3);//59
         }
-        {
-            int answer =  new Solution().networkDelayTime(new int[][]{
-                            new int[]{1,2,1},
-
-                    }
-                    , 2,
-                    2);
-        }
-        {
-            int answer =  new Solution().networkDelayTime(new int[][]{
-                            new int[]{2,1,1},
-                            new int[]{2,3,1},
-                            new int[]{3,4,1}
-                    }
-                    , 4,
-                    2);
-        }
-        {
-            int answer =  new Solution().networkDelayTime(new int[][]{
-                            new int[]{1, 2, 1},
-                            new int[]{1, 3, 1},
-                            new int[]{2, 4, 2},
-                            new int[]{4, 1, 2},
-                            new int[]{4, 3, 4},
-                            new int[]{3, 1, 1},
-                            new int[]{5, 4, 3}
-                    }
-                    , 5,
-                    5);//6
-        }
-
-        {
-            int answer =  new Solution().networkDelayTime(new int[][]{
-                            new int[]{1, 2, 1},
-                            new int[]{1, 3, 1},
-                            new int[]{2, 4, 2},
-                            new int[]{4, 1, 2},
-                            new int[]{4, 3, 4},
-                            new int[]{3, 1, 1},
-                            new int[]{5, 4, 3}
-                    }
-                    , 5,
-                    2);//-1
-        }
-
-
     }
 }
