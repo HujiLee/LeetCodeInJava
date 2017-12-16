@@ -1,4 +1,4 @@
-package problems.T743;
+package problems.T743.v1_WA;
 
 import java.util.HashSet;
 import java.util.Iterator;
