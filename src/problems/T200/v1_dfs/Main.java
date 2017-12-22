@@ -1,4 +1,4 @@
-package problems.T200;
+package problems.T200.v1_dfs;
 
 class Solution {
 
