@@ -9,17 +9,17 @@ class Solution {
     public int arrayPairSum(int[] nums) {
         assert nums.length%2==0;
         int n = nums.length/2;
-        int _ = 0;
+        int $ = 0;
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         for(int i :nums){
             queue.add(i);
         }
         for(int i = 1;i<=n;i++){
-            _+=queue.poll();
+            $+=queue.poll();
             queue.poll();
         }
 
-        return _;
+        return $;
     }
 }
 public class Main {
