@@ -28,7 +28,7 @@ Return an edge that can be removed so that the resulting graph is a tree of N no
 * The size of the input 2D-array will be between 3 and 1000.
 * Every integer represented in the 2D-array will be between 1 and N, where N is the size of the input array.
 
-<font style="color:red">**Update (2017-09-26):**</font>
+<b style="color:red">Update (2017-09-26):</b>
 
 We have overhauled the problem description + test cases and specified clearly the graph is an _**undirected**_ graph.
  
