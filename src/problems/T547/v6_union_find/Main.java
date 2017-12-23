@@ -1,14 +1,14 @@
 package problems.T547.v6_union_find;
 
-import java.util.Collections;
-
 class Solution {
-    Integer[] array;
+    int[] array;
 
     public int findCircleNum(int[][] Matrix) {
         final int N = Matrix.length;
-        array = new Integer[N];
-        array = Collections.nCopies(N, -1).toArray(array);
+        array = new int[N];
+        for(int i = 0;i<N;i++){
+            array[i] = -1;
+        }
         for (int x = 0; x < N; x++) {
             for (int y = 0; y <= x; y++) {
                 if (Matrix[x][y] == 1) {
@@ -34,7 +34,7 @@ class Solution {
         int roota = find(a);
         int rootb = find(b);
         if (roota == rootb) return;
-        if (!array[roota].equals(array[rootb])) {
+        if (array[roota]!=(array[rootb])) {
             if (array[roota] < array[rootb]) {
                 //a tree is taller
                 array[rootb] = roota;
