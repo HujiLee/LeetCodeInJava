@@ -78,7 +78,7 @@ class Solution {
         if (stack.empty()) {
             return null;
         } else {
-            assert stack.size() >= 4;
+//            assert stack.size() >= 4;
             return stack;
         }
     }
