@@ -1,4 +1,4 @@
-package problems.T684.v1_stupid_dsf;
+package problems.T684.v1_stupid_dfs;
 
 import java.util.Set;
 import java.util.Stack;
