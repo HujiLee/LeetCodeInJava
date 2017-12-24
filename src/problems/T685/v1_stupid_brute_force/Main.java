@@ -82,13 +82,13 @@ class Solution {
         final Set<Integer> null_ints  = new TreeSet<Integer>();
         while (!stack.empty()){
             int i = stack.pop();
-            graph[i] = -1;//表示visited
+//            graph[i] = -1;//表示visited
             System.out.print(i+",");
 
             for(Integer childred:p2children.getOrDefault(i,null_ints)){
-                if(graph[childred]!=-1){
+//                if(graph[childred]!=-1){
                     stack.push(childred);
-                }
+//                }
             }
             count_visited.add(i);
         }
