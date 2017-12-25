@@ -3,21 +3,7 @@ package problems.T721.version_union_find;
 import java.util.*;
 
 class Solution {
-    class DSU {
-        int[] parent;
-        public DSU() {
-            parent = new int[10001];
-            for (int i = 0; i <= 10000; ++i)
-                parent[i] = i;
-        }
-        public int find(int x) {
-            if (parent[x] != x) parent[x] = find(parent[x]);
-            return parent[x];
-        }
-        public void union(int x, int y) {
-            parent[find(x)] = find(y);
-        }
-    }
+
 
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         DSU dsu = new DSU();
@@ -51,7 +37,21 @@ class Solution {
         return new ArrayList<List<String>>(ans.values());
     }
 }
-
+class DSU {
+    int[] parent;
+    public DSU() {
+        parent = new int[10001];
+        for (int i = 0; i <= 10000; ++i)
+            parent[i] = i;
+    }
+    public int find(int x) {
+        if (parent[x] != x) parent[x] = find(parent[x]);
+        return parent[x];
+    }
+    public void union(int x, int y) {
+        parent[find(x)] = find(y);
+    }
+}
 
 public class Main {
     static void printAnswer(List<List<String>> answer) {
