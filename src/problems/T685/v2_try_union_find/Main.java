@@ -6,6 +6,7 @@ class Solution {
     public int[] findRedundantDirectedConnection(int[][] edges) {
         parentsof = new int[edges.length + 1];
         int[] A = null, B = null;
+        int[] circle_edge = null;
         for (int[] edge : edges) {
             int parent = edge[0], child = edge[1];
             int parentsof_child = parentsof[child];
@@ -15,14 +16,18 @@ class Solution {
             } else {
                 int root_of_parent = findroot(parent);
                 if (root_of_parent == child) {
-                    if (A==null){
-                        return edge;
-                    }else{
-                        return A;
-                    }
-
+                    //has circle
+                    circle_edge = edge;
+                    continue;
                 }
                 parentsof[child] = parent;
+            }
+        }
+        if(circle_edge!=null){
+            if(A==null){
+                return circle_edge;
+            }else {
+                return A;
             }
         }
         if (!validRootTree()) {
