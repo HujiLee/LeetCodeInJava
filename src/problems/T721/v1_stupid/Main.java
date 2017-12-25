@@ -76,7 +76,7 @@ class Solution {
             }
         }
 
-        LinkedList<List<String>> result = new LinkedList< List<String>>() {{
+        LinkedList<List<String>> result = new LinkedList<List<String>>() {{
             for (V_SET v_set : v_accounts) {
                 if (v_set.equals == null) {
                     this.add(new LinkedList<String>() {{
@@ -93,6 +93,16 @@ class Solution {
 }
 
 public class Main {
+    static void printAnswer(List<List<String>> answer) {
+        for (List<String> stringList : answer) {
+            for (String s : stringList) {
+                System.out.print(s + ",");
+            }
+            System.out.println();
+        }
+        System.out.println("++++++++++++++++");
+    }
+
     public static void main(String[] args) {
         /*
         let array = [["John","johnsmith@mail.com","john_newyork@mail.com"],["John233","johnsmith@mail.com","john00@mail.com"],["Mary","mary@mail.com"],["John","johnnybravo@mail.com"]];
@@ -119,6 +129,7 @@ public class Main {
                     this.add("johnnybravo@mail.com");
                 }});
             }});
+            printAnswer(answer);
         }
 
     }
