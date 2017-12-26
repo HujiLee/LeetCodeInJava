@@ -1,4 +1,4 @@
-package problems.T169.v1_stupid_brute;
+package problems.T169.v1_hash_map;
 
 import java.util.HashMap;
 import java.util.Map;
