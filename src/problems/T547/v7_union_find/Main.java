@@ -13,6 +13,22 @@ class Solution {
         public Element(int val) {
             this.val = val;
         }
+
+        Element find(){
+            if(parent==null){
+                return this;
+            }else{
+                return parent.find();
+            }
+        }
+
+        void union(Element element){
+            Element myroot = find();
+            Element yourroot = element.find();
+            if(myroot!=yourroot){
+                myroot.parent = yourroot;
+            }
+        }
     }
 
     Element[] elements;
@@ -26,7 +42,7 @@ class Solution {
         for (int x = 0; x < N; x++) {
             for (int y = 0; y <= x; y++) {
                 if(M[x][y]==1){
-                    union(x,y);
+                    elements[x].union(elements[y]);
                 }
             }
         }
@@ -40,23 +56,6 @@ class Solution {
 
 
         return count;
-    }
-
-    void union(int a, int b) {
-        Element aroot = find(a);
-        Element broot = find(b);
-        if (aroot != broot) {
-            aroot.parent = broot;
-        }
-
-    }
-
-    Element find(int a) {
-        if (elements[a].parent == null) {
-            return elements[a];
-        } else {
-            return find(elements[a].parent.val);
-        }
     }
 }
 
