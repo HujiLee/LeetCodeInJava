@@ -23,6 +23,12 @@ class Solution {
 }
 public class Main {
     public static void main(String[] args) {
+        {
+            int answer = new Solution().majorityElement(new int[]{
+                    1,2,3,2,5,-2,1,2,3,2,9,2,2,4,2,2,9,2,2,2
+            });
+            System.out.println(answer);//2
+        }
 
     }
 }
