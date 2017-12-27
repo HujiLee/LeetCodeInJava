@@ -10,4 +10,6 @@ Difficulty:Medium
 
 **Similar Questions:** 
 
-<a color="blue" style="color:green" href="https://leetcode.com/problems/majority-element">Majority Element</a>
+<a  style="color:green" href="https://leetcode.com/problems/majority-element">
+<font color="red">Majority Element</font>
+</a>
