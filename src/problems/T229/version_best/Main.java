@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
-        int m = 0, n = 0, countm = 0, countn = 0;
+        int m = Integer.MIN_VALUE, n = Integer.MIN_VALUE, countm = 0, countn = 0;
         for(int num : nums) {
             if(num == m) countm++;
             else if(num == n) countn++;
