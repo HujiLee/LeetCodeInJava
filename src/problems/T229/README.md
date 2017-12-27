@@ -4,9 +4,10 @@ Given an integer array of size n, find all elements that appear more than ⌊ n/
 
 Difficulty:Medium
 
-**Related Topics**
+**Related Topics:**
+
 [Array](https://leetcode.com/tag/array)
 
-**Similar Questions** 
+**Similar Questions:** 
 
-<a style="color:green" href="https://leetcode.com/problems/majority-element">Majority Element</a>
+<a color="blue" style="color:green" href="https://leetcode.com/problems/majority-element">Majority Element</a>
