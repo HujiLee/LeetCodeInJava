@@ -10,6 +10,8 @@ Difficulty:Medium
 
 **Similar Questions:** 
 
+```html
 <a  style="color:green" href="https://leetcode.com/problems/majority-element">
 <font color="red">Majority Element</font>
 </a>
+```
