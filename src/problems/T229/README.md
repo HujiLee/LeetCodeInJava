@@ -9,4 +9,4 @@ Difficulty:Medium
 
 **Similar Questions** 
 
-[Majority Element](https://leetcode.com/problems/majority-element)
+<a style="color:green" href="https://leetcode.com/problems/majority-element">Majority Element</a>
