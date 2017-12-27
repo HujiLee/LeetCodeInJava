@@ -30,6 +30,12 @@ public class Main {
     public static void main(String[] args) {
         {
             List<Integer> answer = new Solution().majorityElement(new int[]{
+                    1,2,1,1,2,2
+            });
+            System.out.println(answer);//[1,2]
+        }
+        {
+            List<Integer> answer = new Solution().majorityElement(new int[]{
                     1,2,3,1,2,2
             });
             System.out.println(answer);//[2]
