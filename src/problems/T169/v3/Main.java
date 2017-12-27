@@ -6,16 +6,17 @@ class Solution {
     public int majorityElement(int[] $nums) {
         this.nums = $nums;
         int possible_majority_element = candidate(0);
-        int count = 0;
-        for(int num:nums){
-            if(num==possible_majority_element){
-                count++;
-            }
-        }
-        if(count*2>nums.length){
-            return possible_majority_element;
-        }
-        return Integer.MIN_VALUE;
+        return possible_majority_element;
+//        int count = 0;
+//        for(int num:nums){
+//            if(num==possible_majority_element){
+//                count++;
+//            }
+//        }
+//        if(count*2>nums.length){
+//            return possible_majority_element;
+//        }
+//        return Integer.MIN_VALUE;
     }
 
     int candidate(int m) {
