@@ -5,7 +5,7 @@ class MinStack {
 
     private static class HStack {
 
-        private int array_size = 7500*2+1;
+        private int array_size = 7502;
         private int stack_size = 0;
         private int[] array = new int[array_size];
 
