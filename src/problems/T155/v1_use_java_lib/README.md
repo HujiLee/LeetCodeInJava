@@ -15,3 +15,5 @@ Your runtime beats 0.11 % of java submissions.
 ***
 
 使用java内置的Stack和Collections.min(stack),AC,相当慢
+***
+套出LeetCode里Stack的高度最多为7500
